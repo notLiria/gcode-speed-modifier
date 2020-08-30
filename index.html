@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gcode Speed Modifier</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="controls">
+        <h1 class="title">Gcode Speed Modifier</h1>
+        <div class= "textarea" id="reference">
+          Modifies gcode speed
+        </div>
+        <div class="page-content">
+          <div class="inputs-outputs row">
+            <div id="known-variables" class="card">
+              <div class="inputs">
+                <h2 class="input-label">Inputs</h2>
+                <div class="input-container">
+                  <div class="h-spaced">
+                    <label for="min_speed">Min Speed</label>
+                    <span class="subtitle">In mm/s</span>
+                  </div>
+                  <input
+                    placeholder="Min Speed"
+                    class="calc-input"
+                    required
+                    type="number"
+                    id="min_speed"
+                    name="min_speed"
+                    value="20"
+                  />
+                </div>
+                <div class="input-container">
+                  <div class="h-spaced">
+                    <label for="max_speed">Max Speed</label>
+                    <span class="subtitle">In mm/s</span>
+                  </div>
+                  <input
+                    required
+                    type="number"
+                    class="calc-input"
+                    id="max_speed"
+                    name="max_speed"
+                    value="50"
+                  />
+                </div>
+                <div class="input-container">
+                  <div class="h-spaced">
+                    <label for="input_file">Input File</label>
+                    <span class="subtitle">.gcode file</span>
+                  </div>
+                  <input
+                          required
+                          type="file"
+                          class="calc-input"
+                          id="input_file"
+                          name="input_file"
+                          accept=".gcode"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="card output-container">
+              <h2 class="input-label">Outputs</h2>
+              <div id="outputs">
+                <textarea id = "result" rows="25" cols="80" readonly=""></textarea>
+              </div>
+              <span id="error" hidden>Your inputs are invalid</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/main.ts"></script>
+  </body>
+</html>
